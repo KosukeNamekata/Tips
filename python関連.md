@@ -28,3 +28,9 @@
 - 前原さんの論文: https://ui.adsabs.harvard.edu/abs/2012Natur.485..478M/abstract
 
 - scipyに含まれている、それぞれのmethodをまとめているサイト： https://org-technology.com/posts/low-pass-filter.html
+
+```
+    model = periodic.LombScargleFast(fit_period=True)
+    model.optimizer.period_range = (1, 10)
+    model.fit(times, lc)
+```
