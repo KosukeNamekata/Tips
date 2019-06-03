@@ -29,6 +29,8 @@
 
 - scipyに含まれている、それぞれのmethodをまとめているサイト： https://org-technology.com/posts/low-pass-filter.html
 
+
+#### ＊pythonで周期解析
 ```
     model = periodic.LombScargleFast(fit_period=True)
     model.optimizer.period_range = (1, 10)
