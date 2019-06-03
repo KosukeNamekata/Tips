@@ -1,27 +1,30 @@
 
 ### 便利なpythonのコード
 
-#### ＊pythonは、全てがオブジェクト指向プログラム  
+#### 「基本」pythonは、全てがオブジェクト指向プログラム  
 - pythonの変数、リストなどは、全てクラスによって定義された「**インスタンス**」と同じような機能を持ち、**多くのメソッドが用意されている**。
 
 
-#### ＊ある変数の正体を調べたいとき： type, dir
+#### 「基本１」ある変数の正体を調べたいとき： type, dir
 
 - `type(x)`: xの型を返す関数です。たとえば、次のプログラムを実行すると  
 
 - `dir(x)`: xの持っているメソッドを全て表示してくれます。
 
-print(x.split(" "))
 
-#### ＊リストへの操作：appendとextendの違い...
+#### 「基本」リストへの操作：appendとextendの違い...
 **「pythonのリストは、インスタンス」**。numpyを入れないと、四則演算はできないが、様々なメソッドがビルドインされている。  
 
-`list.append(x)`: 　リストの末尾に要素を一つ追加します。a[len(a):] = [x] と等価です。
+- `list.append(x)`: 　リストの末尾に要素を一つ追加します。a[len(a):] = [x] と等価です。
 
-`list.extend(x)`: イテラブルのすべての要素を対象のリストに追加し、リストを拡張します。a[len(a):] = iterable と等価です。
+- `list.extend(x)`: イテラブルのすべての要素を対象のリストに追加し、リストを拡張します。a[len(a):] = iterable と等価です。
 
-`list.sort(key=None, reverse=False)`: リストの項目を、インプレース演算 (in place、元のデータを演算結果で置き換えるやりかた) でソートします。引数はソート方法のカスタマイズに使えます。 sorted() の説明を参照してください。
-
-`list.reverse()`: リストの要素を、インプレース演算で逆順にします。
+- `list.sort(key=None, reverse=False)`: リストの項目を、インプレース演算 (in place、元のデータを演算結果で置き換えるやりかた) でソートします。引数はソート方法のカスタマイズに使えます。 sorted() の説明を参照してください。
 
 
+#### ＊pythonでdetrend
+- Kepler LCに対して、J.D.のホームページ参照： https://github.com/jradavenport/appaloosa/tree/master/appaloosa
+
+- 前原さんの論文: https://ui.adsabs.harvard.edu/abs/2012Natur.485..478M/abstract
+
+- scipyに含まれている、それぞれのmethodをまとめているサイト： https://org-technology.com/posts/low-pass-filter.html
