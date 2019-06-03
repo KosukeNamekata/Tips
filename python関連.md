@@ -32,6 +32,7 @@
 
 #### ＊pythonで周期解析
 ```
+from gatspy import datasets, periodic
     model = periodic.LombScargleFast(fit_period=True)
     model.optimizer.period_range = (1, 10)
     model.fit(times, lc)
