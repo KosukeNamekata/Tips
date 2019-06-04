@@ -31,10 +31,16 @@
 
 
 #### ＊pythonで周期解析
+- gatspyに入っているperiodicで周期解析ができる
 ```
     from gatspy import datasets, periodic
     model = periodic.LombScargleFast(fit_period=True)
     model.optimizer.period_range = (1, 10)
     model.fit(times, lc)
     print("**Rotational Period** is {} day".format(model.best_period))　＃こういう形で、文字を埋められる。
+```
+- astropy.stats.LombScargleでLomb-Scargle Periodgramがかける
+```
+    from astropy.stats import LombScargle
+    frequency, power = LombScargle(time[ss], bvamp[ss]).autopower()
 ```
