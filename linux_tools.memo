@@ -96,43 +96,18 @@ wcコマンド
 「find . -type f | wc -l」：カレントディレクトリ以下にあるファイル数
 
 
-psファイル分割
-file.psから特定のページだけ抜き出して、新しいpsファイルを作る。
-例
-「psselect 2-4 file.ps new.ps」2-4ページのみ抜き出す
-「psselect 10 file.ps new.ps」10ページのみ抜き出す
-「psselect -e file.ps new.ps」偶数ページのみ抜き出す
-「psselect -o file.ps new.ps」奇数ページのみ抜き出す
+＊「pdftk」：pdfの分割・統合
+・分割の場合：
+$ pdftk 対象のPDFファイル cat ページ範囲 output 出力先のPDFファイル
+#ページ範囲は、「1-5」や「7-end」、「1-5 7-end」など可。
 
-
-「pdftk」：pdfの分割・統合
-・分割の場合：「pdftk 対象のPDFファイル cat ページ範囲 output 出力先のPDFファイル」
-    ページ範囲は、「1-5」や「7-end」、「1-5 7-end」など可。
-
-・結合の場合：「pdftk 結合するPDFファイル cat output 出力先のPDFファイル」
-    結合ファイル名は、ファイル名列記やワイルドカードなど。
-
-・macでのpdfファイル結合
-   /System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py --output output.pdf input1.pdf input2.pdf ...
-
-
-importコマンド
-表示されているwindowを画像ファイルにする。
-・「import **.gif」
-・フレームの枠まで⇒「import -frame **.gif」
-・画面全体⇒「import -window root **.gif
-・10秒後に画面キャプチャ⇒「sleep 10; import **.gif」
-
-
-ping
-・別の計算機への呼びかけ
+・結合の場合：
+$ pdftk 結合するPDFファイル cat output 出力先のPDFファイル
+#結合ファイル名は、ファイル名列記やワイルドカードなど。
 
 
 ファイル結合など
 ・cat ファイルを縦に結合(ファイルの中身出力)
 ・paste ファイルを横に結合
 
-
-その他
-・dos2unix cygwinにて、windowsの改行コードのファイルをunix形式へ変換(逆はunix2dos)
 
