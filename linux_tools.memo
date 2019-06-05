@@ -1,1 +1,138 @@
+rsync
+ディレクトリ間のファイルの同期が出来る。
+「rsync   -(arなど)   (--deleteなど)   (-e ssh)   同期元   同期先」
+optionとしては、-arなどのように使う。
+○よく使う物
+「a：パーミッションやグループ等の保持」
+「r：指定したディレクトリ下の各ディレクトリも再帰的にバックアップする」
+「--existing：更新されたファイルだけをコピーし、追加されたファイルは無視」
+「--exclude ".*"：「.」から始まるファイルは無視」
+「--delete： コピー元で削除されたファイルは、コピー先でも削除。-aオプションと同時指定でコピー元とコピー先を同期可能」
+「-e 'ssh -i 秘密鍵'：公開鍵認証」
+「--append-verify : 接続切断時に、再度同じコマンドを打つことで転送再開可能」
+・AAA, BBB越しにCCCというサーバーからディレクトリーDIRをコピーする方法(-A,-B,-Cはoption)
+「rsync -av --rsh="ssh -A AAA ssh -B BBB ssh -C" CCC:"DIR/" "DIR/"」
+
+
+
+tar
+「tar xvf filename.tar その中のファイル名」 ⇒展開
+「tar zxvf filename.tgz」 ⇒解凍して展開(GNUzip)
+「tar zxvf filename.tar.gz」 ⇒解凍して展開(GNUzip)
+「tar cvf filename.tar 圧縮ディレクトリ」 ⇒圧縮
+「tar zcvf filename.tar.gz 圧縮ディレクトリ」 ⇒圧縮してgzip
+「tar zcvf filename.tgz 圧縮ディレクトリ」 ⇒圧縮してgzip
+
+※因みにzipは圧縮なら「zip (-r) **.zip **」、解凍はunzip
+
+
+du コマンド
+容量を表示
+「du -(option) フォルダ・ファイル名」
+optionリスト(一部)
+a：ディレクトリだけではなくファイルについても表示
+c：検索したすべての容量の総計を表示
+h：容量を適当な単位で表示
+k： 単位をKバイトにする
+m：単位をMバイトにする
+s：引数で指定したファイルやディレクトリの総計を表示
+S：個々のディレクトリでサブディレクトリを含めずに表示
+
+
+lsコマンドのoption
+「ls -(option)」
+optionリスト(一部)
+a：「.filename」というファイルも表示
+c：ファイル・ステータスを変更した時間順にソートして表示
+h：単位などを読みやすい形式で表示する
+k：ファイル・サイズをキロ・バイト単位で表示する
+l：ファイルの詳細も同時に表示する。ファイル名、ファイル・タイプ、パーミッション、ハード・リンクの数、オーナー名、グループ名、バイト・サイズ、タイム・スタンプの順に表示
+r： 逆順にソートして表示
+s：ファイル名の左側にキロ・バイト単位でファイル容量を付加して表示
+
+「ls -F | grep /」ディレクトリのみ表示
+「ls -F | grep -v /」ファイルのみ表示
+
+
+grepコマンド
+ファイル内の文字列検索(行の抽出) ※列の抽出は「cut」
+「grep  検索文字列  ファイル名」 ⇒ ファイル内で検索文字列を検索し、あったらその行を表示。
+「grep  検索文字列」 ⇒ 標準入力から検索文字列を検索し、あったらその行を表示する。
+
+
+sed
+該当する文字列を検索して置換する
+例：「sed -e "s/old-words/new-words/g" test.txt」
+   test.txt内の"old-words"という文字列を全て"new-words"に置換してコマンドライン上に出力する。
+
+
+covertコマンド
+「convert [options   ...] input_file output_file」
+EPSやTIFF、JPEG、GIF、PNG、PDFなどの相互変換。
+・「-density 数字」で解像度を指定。ex. 「-density 144」
+・jpgからサイズをそのままでeps変換：「convert **.jpg eps2:**.eps」 
+複数のファイルを一つのPDFにする場合
+「convert `for i in \`seq -w 1 30\`; do echo shikepri_$i.jpg; done` shikepri.pdf」
+「convert shikepri_??.jpg shikepri.pdf」
+
+
+epstopdfコマンド
+epsをpdfへ変換(epsをほぼそのままの解像度で変換するならこれがよさそう)
+「epstopdf hoge.eps」
+※なおepspdfというコマンドもある。
+
+
+mogrifyコマンド
+convertと同じような感じだが、まとめて変換出来たりする。
+例：「mogrify -format gif test*.png」
+
+
+wcコマンド
+文字数カウント：「wc   ファイル名」と打つ。行数、単語数、ファイルサイズ(byte)の順で表示
+
+応用
+「ls | wc -l」：カレントディレクトリのファイルディレクトリ数
+「find . | wc -l」：カレントディレクトリ以下にあるファイルディレクトリ数
+「find . -type f | wc -l」：カレントディレクトリ以下にあるファイル数
+
+
+psファイル分割
+file.psから特定のページだけ抜き出して、新しいpsファイルを作る。
+例
+「psselect 2-4 file.ps new.ps」2-4ページのみ抜き出す
+「psselect 10 file.ps new.ps」10ページのみ抜き出す
+「psselect -e file.ps new.ps」偶数ページのみ抜き出す
+「psselect -o file.ps new.ps」奇数ページのみ抜き出す
+
+
+「pdftk」：pdfの分割・統合
+・分割の場合：「pdftk 対象のPDFファイル cat ページ範囲 output 出力先のPDFファイル」
+    ページ範囲は、「1-5」や「7-end」、「1-5 7-end」など可。
+
+・結合の場合：「pdftk 結合するPDFファイル cat output 出力先のPDFファイル」
+    結合ファイル名は、ファイル名列記やワイルドカードなど。
+
+・macでのpdfファイル結合
+   /System/Library/Automator/Combine PDF Pages.action/Contents/Resources/join.py --output output.pdf input1.pdf input2.pdf ...
+
+
+importコマンド
+表示されているwindowを画像ファイルにする。
+・「import **.gif」
+・フレームの枠まで⇒「import -frame **.gif」
+・画面全体⇒「import -window root **.gif
+・10秒後に画面キャプチャ⇒「sleep 10; import **.gif」
+
+
+ping
+・別の計算機への呼びかけ
+
+
+ファイル結合など
+・cat ファイルを縦に結合(ファイルの中身出力)
+・paste ファイルを横に結合
+
+
+その他
+・dos2unix cygwinにて、windowsの改行コードのファイルをunix形式へ変換(逆はunix2dos)
 
