@@ -1,0 +1,173 @@
+＊フレアゼミめも
+
+＃6/5フレアゼミ
+・天文学会アブストラクト
+スペクトルが観測された、ということはちゃんとかく
+解析の次第では、可視光とHαの等価幅の時間変化の違いなどが見えていれば、かく
+
+#AstroimageJ
+・option + click -> 
+・Analyze -> plot seeing profile [opt+星クリック]->アパーチャー決定
+・oo-> First slice-Last sliceを全部へ
+->[Vary photometer…]にチェックマーク
+-> Place aparture
+#Use single step mode
+#Use previous 
+
+・Save Table
+・Source-Skyの中にfluxがはいっている。
+
+
+#mag = -2.5*log10(flux)
+
+
+#5/30フレアゼミ
+報告点
+・Kepler-17 -> Morrisさん、野津さんのコメントを反映、そのうち投稿します。
+・せいめいproposal -> 提出した。倍率はやすうベースで1.2~1.3倍くらいとのこと。
+
+野津さん
+・Stellar CME -> Nicerでは無理。Binary, RS-CVnとかの方がターゲットとしては良いかもしれない。
+->Xrismならできる？チャンドラとかなら、アーカイブデータを取ってきたらできるかも？？
+
+
+#5/27高棹さん議論メモ
+・pile-up effect: 黒点の合体の効果-> 合体しているかどうかはわからないが、同じactive longitudeに数多くの黒点が集中しており、新しくflux emergenceが起きているという例は多数ある。 -> 他にも、他の恒星は自転が早く、差動回転も強いので、黒点の合体・崩壊は頻繁に起きている可能性はある。->そういう意味で、自転周期とかがわかっているのかはきになるところ。
+
+・F_heating=constantと仮定した場合に、satutationを迎えるのは、最大黒点サイズがサチってしまって、小規模の黒点しか出なくなるということを示しているのでは？(例えばSHibata et al. 2013などで言われているように。)->つまり、出現頻度の冪がもっとsteepになる/最大黒点面積だけサチって出現頻度の絶対値が上昇する。
+
+・filling factor 0.03(BVA=3%)くらいで、何か様相が変わってくる。-> Kepler-17はちょうど境目 transitくらいか。
+->後はKepler-17の論文を紹介とかしてたら１時間30分くらいにはなるか。
+
+1 HD 26980(G3V, TYC 7578-414-1, 2MASS J04142257-3819016)
+TESS ○(Sector4-5) -> 1.76 day, 振幅2-3% -> これは近くにA型星があってなかなか厳しいかも
+
+2 HD 43976(G2V, TYC 8542-149-1, 2MASS J06153886-574205)
+TESS ○(Sector1-13) -> 3.57 day, 振幅2-3% 
+
+3 HD 127405(G1V, TYC 4984-18-1, 2MASS J14311157-0014149)
+TESS ●(来年の春)
+
+4 HD 205756(G2/3V, TYC 7988-711-1, 2MASS J21384055-4242393)
+TESS ○(Sector1) -> 7.54 day, 振幅1%
+
+#5/22フレアゼミ
+by 野津さん
+・proposal出した -> Kowalski et al. 2018
+・観測した -> 50cmのデータ(MITSuMEも50cm)が使えるようになった
+・解析した分光の、解析中のデータは今後
+・NSOセミナー報告
+・PLATO-> TESSのすごい版
+#25sec cadence, TESSの望遠鏡を32個くらい並べたらしい, 性能的にはTESSとあんまり変わらない？
+・論文紹介
+
+by 前原さん？
+・
+
+by 行方
+・せいめい
+・kepler17論文
+
+by 岡本さん
+・夏の学校のアブストラクト
+・今後の方針の相談
+
+
+#5/15フレアゼミ
+○議事録
+＜せいめい望遠鏡の観測＞
+・APO-> Lineの非対称性を観測するプロポーザルに
+・H GANMAの強度比→electron densityの強度
+・EV Lacの観測に対応した時間に、white-light flare/non-white-light flareの違いについて
+・YZ CMiのTESSのデータを乗せて、これくらいの小さなフレアも検出できます、のいうのを乗せるといいかも。(YZ CMiとフレアの発生率を比較したものも乗せるといい？？)
+・2019Aでの観測データも乗せるといい。
+
+・VPH blue: R=500 (4000-8900A)
+4.37A @Hα(6562.8A): 
+2.89A @Hr(4340.5A): 
+AB mag=10.82
+
+・観測概要
+TESS衛星による高精度測光モニタ観測+3.8m望遠鏡による高時間分解能分光モニタ観測
+
+・聞くべきこと
+- S/Nの計算の仕方->波長ごとに、magを変えないといけないのか
+- Newでいいのか? Continueにすべきか？
+- 野上さんのHIDESの観測？
+- 何日にするのか？
+
+・6月中旬？にAPO=5min (exposure) + 3min (readout): 今後も、多色＋高分散分光
+・次回ゼミ5/22(水曜日) 19:00＃080-6638-9235 (->本田さん: 京都に来られるとのこと)
+
+○鳥海さんとの議論
+
+
+
+
+# 臨時スーパーフレアゼミ
+○議事録
+・前原さん、野津さん、行方から恒星フレアのデータ紹介
+
+・white-light flareとHα-βの対応関係
+-> Hαで増光しているのに、可視光での増光がないパターンが複数報告
+thermal, or non-thermal flareに対応している？
+#その際には、blue asymmetryが見えているように見える
+#本田さんのEV Lac論文フレアでのblue asymmetryとも関連？
+
+・FISHERのデータを解析すれば、HαとWhite-light flareの強度は比較できそう（観測例は5例）
+
+・フレアカーネルとカーネル以外で特にバルマー系列スペクトルの強度・形状などはどう違うか？
+->SMART/ドームレスで解析できる？
+
+・
+
+・太陽ではHβなどのバルマー系列の観測はあまり行われていない。
+-> 太陽フレア
+
+・ラインの非対称性に関して
+Vida+2019
+https://ui.adsabs.harvard.edu/abs/2019A%26A...623A..49V/abstract
+です。Paper I とあるので続編が出るのかも。
+
+同著者で時間分解した観測例はこちらです。
+https://ui.adsabs.harvard.edu/abs/2016A%26A...590A..11V/abstract
+
+これらを含めて、過去の恒星CME or prominence eruption ”candidate”の観測をまとめた論文がこちらです。
+https://ui.adsabs.harvard.edu/abs/2019arXiv190409598M/abstract
+
+5800km/sの論文
+https://ui.adsabs.harvard.edu/abs/1990A%26A...238..249H/abstract
+
+
+#中央大+京都大学ゼミ
+●NICERby佐々木さん
+・エネルギーバンド
+10keV以上:バックグラウンドの成分
+0.4keV以下: 0.4-0.5の成分
+・0.2-0.4keV以下でもチェックしてみる
+・バックグラウンドではない、というのを見てみたほうがいいかも。
+
+・bin time: とりあえず64秒bin
+・EM-T modeling
+-> thin thermal plasma model(apec)
+-> TV abs
+・NICERの解析は、落ち着いたところで、行方・佐々木で行う
+
+●SCAT
+・露光時間10分、読み出し10秒以下
+・36cmの口径
+・ガタガタしているのは、TiOの分子の吸収線。
+・sarithでスペクトルの引き算をできる。
+・一番右のは、大気の吸収のせいかもしれない。
+・blueのcontinuumの成分があるのは面白い。
+
+●今後できそなこと
+・lineの非対称性(せいめい?/なゆた)
+・波長ごとのエネルギーの分配/継続時間の比較
+・X線EM-T diagram vs. White-light Energy-duration diagram
+・Kowalski's paperの紹介など
+・可視光の色の変化
+・2019Bのプロポーザル(8月-12月)に向けて
+-今回と同じようなモード？VPH-blue
+-9-10月:EVLacのデータ
+
