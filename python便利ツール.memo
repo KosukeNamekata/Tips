@@ -19,12 +19,16 @@
 「応用」
 
 ＊numpy関連
+・listの掛け算、足し算にはfor loopが必要であるが、長さを簡単に変更できたりして便利。
+・numpy.ndarrayで配列を定義すれば、直感的に配列の掛け算、足し算を行うことができる。
+
+
 ・loadtxt
 > np.loadtxt("file.txt", usecols = 2 #3番目の列だけ抽出してくれる, dtype ="float", skiprows = 2 #最初からM行を読み飛ばす)
-> 
 
 ・savetxt
-> numpy.savetxt(fname, X, fmt=’%.18e’, delimiter=’ ‘, newline=’\n’, header=’’, footer=’’, comments=’#’)
+USAGE： numpy.savetxt(fname, X, fmt=’%.18e’, delimiter=’ ‘, newline=’\n’, header=’’, footer=’’, comments=’#’)
+> np.savetxt('ff_AD_LEO_G.txt', np.array([np.array(jd_time), np.array(photo_star_c)]).T ) #これで全部列で保存できる。
 
 
 ＊detrend
@@ -48,4 +52,22 @@ https://org-technology.com/posts/low-pass-filter.html
 
 > from astropy.stats import LombScargle
 > frequency, power = LombScargle(time[ss], bvamp[ss]).autopower()
+
+
+*fits file open: astropy
+
+> from astropy.io import fits
+> hdulist = fits.open("infile,fits")
+> hdulist[0].data #data
+
+＊順番入れ替え
+
+・numpy.ndarrayの場合
+> np.sort(a)
+> np.argsort(a) -> indexを返す
+・listの場合
+> list.sort()
+
+
+
 
